@@ -77,6 +77,12 @@
             // cbCategoria
             // 
             this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "Electrónica",
+            "Móviles",
+            "Audio",
+            "Electrodomésticos",
+            "Oficina"});
             this.cbCategoria.Location = new System.Drawing.Point(339, 351);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(339, 21);
@@ -98,6 +104,7 @@
             this.btnRedGestProd.TabIndex = 9;
             this.btnRedGestProd.Text = "Gestión de Productos ";
             this.btnRedGestProd.UseVisualStyleBackColor = true;
+            this.btnRedGestProd.Click += new System.EventHandler(this.btnRedGestProd_Click);
             // 
             // btnRegistroProducto
             // 
@@ -107,6 +114,7 @@
             this.btnRegistroProducto.TabIndex = 8;
             this.btnRegistroProducto.Text = "Registrar Producto";
             this.btnRegistroProducto.UseVisualStyleBackColor = true;
+            this.btnRegistroProducto.Click += new System.EventHandler(this.btnRegistroProducto_Click);
             // 
             // btnSeleccionImagen
             // 
@@ -116,6 +124,7 @@
             this.btnSeleccionImagen.TabIndex = 7;
             this.btnSeleccionImagen.Text = "...";
             this.btnSeleccionImagen.UseVisualStyleBackColor = true;
+            this.btnSeleccionImagen.Click += new System.EventHandler(this.btnSeleccionImagen_Click);
             // 
             // txtDireccionImagen
             // 
@@ -202,9 +211,11 @@
             // 
             // pbImagen
             // 
+            this.pbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbImagen.Location = new System.Drawing.Point(17, 31);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(304, 407);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 0;
             this.pbImagen.TabStop = false;
             // 
