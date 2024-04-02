@@ -33,28 +33,26 @@
             this.btnRefrescarClientes = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRefrescarProducto = new System.Windows.Forms.Button();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtApMaterno = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtApPaterno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPnombre = new System.Windows.Forms.TextBox();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtApPaterno = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtApMaterno = new System.Windows.Forms.TextBox();
-            this.btnEditarCliente = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvRegVenCli = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegVenCli)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -70,6 +68,7 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(6, 48);
             this.dgvClientes.Name = "dgvClientes";
@@ -84,6 +83,7 @@
             this.btnRefrescarClientes.TabIndex = 0;
             this.btnRefrescarClientes.Text = "Refrescar";
             this.btnRefrescarClientes.UseVisualStyleBackColor = true;
+            this.btnRefrescarClientes.Click += new System.EventHandler(this.btnRefrescarClientes_Click);
             // 
             // btnBuscar
             // 
@@ -93,6 +93,7 @@
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // groupBox1
             // 
@@ -101,14 +102,13 @@
             this.groupBox1.Controls.Add(this.txtApMaterno);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtApPaterno);
-            this.groupBox1.Controls.Add(this.btnRefrescarProducto);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtPnombre);
             this.groupBox1.Location = new System.Drawing.Point(12, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 395);
@@ -116,14 +116,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles de Cliente";
             // 
-            // btnRefrescarProducto
+            // btnEditarCliente
             // 
-            this.btnRefrescarProducto.Location = new System.Drawing.Point(158, 11);
-            this.btnRefrescarProducto.Name = "btnRefrescarProducto";
-            this.btnRefrescarProducto.Size = new System.Drawing.Size(80, 22);
-            this.btnRefrescarProducto.TabIndex = 18;
-            this.btnRefrescarProducto.Text = "Refrescar";
-            this.btnRefrescarProducto.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Location = new System.Drawing.Point(6, 342);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(319, 34);
+            this.btnEditarCliente.TabIndex = 7;
+            this.btnEditarCliente.Text = "Editar Cliente";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Apellido Materno";
+            // 
+            // txtApMaterno
+            // 
+            this.txtApMaterno.Location = new System.Drawing.Point(6, 175);
+            this.txtApMaterno.Name = "txtApMaterno";
+            this.txtApMaterno.Size = new System.Drawing.Size(319, 20);
+            this.txtApMaterno.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Apellido Paterno";
+            // 
+            // txtApPaterno
+            // 
+            this.txtApPaterno.Location = new System.Drawing.Point(6, 118);
+            this.txtApPaterno.Name = "txtApPaterno";
+            this.txtApPaterno.Size = new System.Drawing.Size(319, 20);
+            this.txtApPaterno.TabIndex = 19;
             // 
             // label4
             // 
@@ -160,6 +193,7 @@
             this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // txtTelefono
             // 
@@ -175,12 +209,12 @@
             this.txtDireccion.Size = new System.Drawing.Size(319, 20);
             this.txtDireccion.TabIndex = 4;
             // 
-            // txtNombre
+            // txtPnombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(6, 60);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(319, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtPnombre.Location = new System.Drawing.Point(6, 60);
+            this.txtPnombre.Name = "txtPnombre";
+            this.txtPnombre.Size = new System.Drawing.Size(319, 20);
+            this.txtPnombre.TabIndex = 2;
             // 
             // txtBuscarCliente
             // 
@@ -189,51 +223,9 @@
             this.txtBuscarCliente.Size = new System.Drawing.Size(254, 20);
             this.txtBuscarCliente.TabIndex = 4;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Apellido Paterno";
-            // 
-            // txtApPaterno
-            // 
-            this.txtApPaterno.Location = new System.Drawing.Point(6, 118);
-            this.txtApPaterno.Name = "txtApPaterno";
-            this.txtApPaterno.Size = new System.Drawing.Size(319, 20);
-            this.txtApPaterno.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Apellido Materno";
-            // 
-            // txtApMaterno
-            // 
-            this.txtApMaterno.Location = new System.Drawing.Point(6, 175);
-            this.txtApMaterno.Name = "txtApMaterno";
-            this.txtApMaterno.Size = new System.Drawing.Size(319, 20);
-            this.txtApMaterno.TabIndex = 21;
-            // 
-            // btnEditarCliente
-            // 
-            this.btnEditarCliente.Location = new System.Drawing.Point(6, 342);
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.Size = new System.Drawing.Size(319, 34);
-            this.btnEditarCliente.TabIndex = 7;
-            this.btnEditarCliente.Text = "Editar Cliente";
-            this.btnEditarCliente.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.dgvRegVenCli);
             this.groupBox3.Location = new System.Drawing.Point(12, 445);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(962, 258);
@@ -241,22 +233,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Registro de ventas del Cliente";
             // 
-            // dataGridView1
+            // dgvRegVenCli
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(948, 196);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(874, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refrescar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvRegVenCli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRegVenCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegVenCli.Location = new System.Drawing.Point(6, 19);
+            this.dgvRegVenCli.Name = "dgvRegVenCli";
+            this.dgvRegVenCli.Size = new System.Drawing.Size(948, 225);
+            this.dgvRegVenCli.TabIndex = 1;
             // 
             // frmGestionClientes
             // 
@@ -272,12 +256,13 @@
             this.Name = "frmGestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Clientes";
+            this.Load += new System.EventHandler(this.frmGestionClientes_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegVenCli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,14 +275,13 @@
         private System.Windows.Forms.Button btnRefrescarClientes;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnRefrescarProducto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPnombre;
         private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtApMaterno;
@@ -305,7 +289,6 @@
         private System.Windows.Forms.TextBox txtApPaterno;
         private System.Windows.Forms.Button btnEditarCliente;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvRegVenCli;
     }
 }

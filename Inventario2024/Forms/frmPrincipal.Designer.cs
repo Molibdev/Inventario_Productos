@@ -41,13 +41,10 @@
             this.btnGenInfProd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnGenInfCli = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnGenInfGenEst = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -110,7 +107,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnGenInfVentas);
-            this.groupBox1.Location = new System.Drawing.Point(12, 41);
+            this.groupBox1.Location = new System.Drawing.Point(12, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(413, 79);
             this.groupBox1.TabIndex = 1;
@@ -124,11 +121,12 @@
             this.btnGenInfVentas.TabIndex = 5;
             this.btnGenInfVentas.Text = "Generar informe de Ventas";
             this.btnGenInfVentas.UseVisualStyleBackColor = true;
+            this.btnGenInfVentas.Click += new System.EventHandler(this.btnGenInfVentas_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnGenInfProd);
-            this.groupBox2.Location = new System.Drawing.Point(12, 139);
+            this.groupBox2.Location = new System.Drawing.Point(12, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(413, 79);
             this.groupBox2.TabIndex = 2;
@@ -142,11 +140,12 @@
             this.btnGenInfProd.TabIndex = 6;
             this.btnGenInfProd.Text = "Generar informe de Productos";
             this.btnGenInfProd.UseVisualStyleBackColor = true;
+            this.btnGenInfProd.Click += new System.EventHandler(this.btnGenInfProd_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnGenInfCli);
-            this.groupBox3.Location = new System.Drawing.Point(12, 246);
+            this.groupBox3.Location = new System.Drawing.Point(12, 296);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(413, 79);
             this.groupBox3.TabIndex = 3;
@@ -160,31 +159,13 @@
             this.btnGenInfCli.TabIndex = 7;
             this.btnGenInfCli.Text = "Generar informe de Clientes";
             this.btnGenInfCli.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnGenInfGenEst);
-            this.groupBox4.Location = new System.Drawing.Point(12, 356);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(413, 79);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnGenInfGenEst
-            // 
-            this.btnGenInfGenEst.Location = new System.Drawing.Point(74, 24);
-            this.btnGenInfGenEst.Name = "btnGenInfGenEst";
-            this.btnGenInfGenEst.Size = new System.Drawing.Size(272, 36);
-            this.btnGenInfGenEst.TabIndex = 8;
-            this.btnGenInfGenEst.Text = "Generar informe general estadístico";
-            this.btnGenInfGenEst.UseVisualStyleBackColor = true;
+            this.btnGenInfCli.Click += new System.EventHandler(this.btnGenInfCli_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 452);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -195,12 +176,12 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario General";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_Closing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,7 +202,5 @@
         private System.Windows.Forms.Button btnGenInfProd;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnGenInfCli;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnGenInfGenEst;
     }
 }
